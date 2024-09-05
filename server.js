@@ -13,11 +13,12 @@ app.post("/webhook-event", (req, res)=>{
     console.log("Trying...")
     console.log(JSON.stringify(payload))
 
-    // if(req.body.event.type == "app_mention"){
-    //     console.log("Event Confirmed..")
-    // }
+    if(req.body.event.type == "app_mention"){
+        console.log("Event Confirmed..")
+        
+    }
     
-    return res.status(200).json(payload.challenge)
+    return res.status(200).json("Verification passed")
 })
 
 
